@@ -1,0 +1,48 @@
+@font-face {
+    font-family: 'Bold';
+    src: url(/fonts/FiraSans-Bold.ttf);
+}
+
+@font-face {
+    font-family: 'YeZi';
+    src: url(/fonts/YeZiGongChangZuiHanJiangXingCao-2.ttf);
+}
+
+h1{
+    font-family: 'Bold';
+    margin-left: 30px;
+}
+
+p{
+    font-family: 'YeZi';
+    margin-left: 30px;
+}
+
+ul{
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: black;
+}
+
+li{
+    float: left;
+    list-style: none;
+    padding-right: 300px;
+    padding-left: 30px;
+}
+
+a{
+    color: white;
+    font-family: 'Bold';
+}
+
+h2{
+    margin-top: 100px;
+    text-align: center;
+    font-family: 'Bold';
+}
+
+footer{
+    text-align: center;
+}

@@ -1,0 +1,49 @@
+body{
+    width: 450px;
+    height: 430px;
+    margin: 0 auto;
+    margin-top: 40px;
+    border: 1px solid black;
+}
+
+h2{
+    margin-left: 10px;
+}
+
+.content{
+    margin-left: 10px;
+}
+
+#content-userName{
+    margin-top: 30px;
+}
+
+#content-password{
+    margin-top: 30px;
+}
+
+input{
+    width: 420px;
+}
+
+#cutLine{
+    margin-top: 40px;
+}
+
+button{
+    background-color: rgba(31, 146, 14, 0.208);
+    border: none;
+    text-align: center;
+    color: white;
+    width: 400px;
+    height: 40px;
+    display: block;
+    margin: 0 auto;
+    margin-top: 40px;
+}
+
+a{
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+}

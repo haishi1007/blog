@@ -81,14 +81,12 @@ h2{
     text-decoration: none;
     text-transform: uppercase;
     padding: 10px 20px;
+}
+
+#upBtn{
     color: #FFFFFF;
     mix-blend-mode: difference;
 }
-
-/*#upBtn{
-    color: #FFFFFF;
-    mix-blend-mode: difference;
-}*/
 
 #btn1::before{
     content: '';
@@ -122,7 +120,7 @@ h2{
     padding: 10px 20px;
 }
 
-#deleteBtn{
+#returnBtn{
     color: white;
     mix-blend-mode: difference;
 }

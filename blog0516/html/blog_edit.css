@@ -45,8 +45,8 @@ h2{
 }
 
 #content{
-   display: flex;
-   justify-content: center;
+   /*display: flex;
+   justify-content: center;*/
    margin-left: 50px;
 }
 
@@ -83,7 +83,7 @@ h2{
     padding: 10px 20px;
 }
 
-#upBtn{
+#updateBtn{
     color: #FFFFFF;
     mix-blend-mode: difference;
 }
@@ -142,14 +142,9 @@ h2{
     width:100% ;
 }
 
-#deletePart{
-    /*margin-left: -100px;*/
-    margin-top: 600px;
-}
-
 #btn3{
-    /*margin-left: 90px;
-    position:relative;*/
+    margin-left: 90px;
+    position:relative;
     min-width: 160px;
     background: transparent;
     border: none;
@@ -167,7 +162,7 @@ h2{
     mix-blend-mode: difference;
 }
 
-/*#btn3::before{
+#btn3::before{
     content: '';
     position: absolute;
     top: 0;
@@ -177,7 +172,7 @@ h2{
     border-radius: 50px;
     background: rgb(237, 234, 234);
     transition: all 0.85s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-}*/
+}
 
 #btn3:hover::before{
     background: rgb(237, 234, 234);

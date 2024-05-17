@@ -41,19 +41,20 @@
                         <option value="文章">文章</option>
                     </select>
                 </div>
-                <div style="float: left;" class="contentPartTitle">写真</div>
-                <input type="file" name="blogImage">
-
+                <div class="contentPart">
+                    <div style="float: left;" class="contentPartTitle">写真</div>
+                    <input type="file" name="blogImage">
+                </div>
                 <div class="contentPart">
                     <div style="float: left;" class="contentPartTitle">正文</div>
                     <textarea name="productDescription" placeholder="正文を入力してください"></textarea>
                 </div>
                 <button class="contentPart" id="btn1">
-                    登録
+                   <span id="upBtn">登録</span>
                 </button>
                 <br>
-                <button class="contentPart" id="btn2" type="button">
-                    <a href="/html/blog_list.html" style="text-decoration: none;"><span id="deleteBtn">キャンセル</span></a>
+                <button class="contentPart" id="btn2" onclick="history.back();" type="button">
+                    <span id="returnBtn">キャンセル</span>
                 </button>
             </form>
         </div>

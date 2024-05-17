@@ -1,26 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="blog_register.css">
 </head>
+
 <body>
     <header>
         <h1>Qのblog</h1>
         <p>爱迪生发明灯泡却没想到越来越无聊</p>
         <ul class="list">
-            <li class="list__item" id="li_1" ><a href="" >home</a></li>
-            <li class="list__item" id="li_2"><a href="">write the blog</a></li>
-            <li class="list__item" id="li_3"><a href="">log out</a></li>
+            <li class="list__item" id="li_1"><a href="/html/blog_list.html" class="list_link">home</a></li>
+            <li class="list__item" id="li_2"><a href="/html/blog_register.html" class="list_link">write the blog</a>
+            </li>
+            <li class="list__item" id="li_3"><a href="/html/blog_edit.html" class="list_link">edit the blog</a></li>
+            <li class="list__item" id="li_4"><a href="/html/login.html" class="list_link">log out</a></li>
         </ul>
     </header>
-    <main></main>
+    <main>
+        <h2>記事の追加</h2>
+        <div id="content">
+            <form action="" method="post">
+                <div class="contentPart">
+                    <div style="float: left;" class="contentPartTitle">タイトル</div>
+                    <input type="text" name="title">
+                </div>
+                <div class="contentPart">
+                    <div style="float: left;" class="contentPartTitle" id="contentPartTitleDate">日付</div>
+                    <input type="date" name="date">
+                </div>
+                <div class="contentPart">
+                    <div style="float: left;" class="contentPartTitle">カテゴリ</div>
+                    <select name="productCategory">
+                        <option value=""></option>
+                        <option value="日常">日常</option>
+                        <option value="インスピレーション">インスピレーション</option>
+                        <option value="文章">文章</option>
+                    </select>
+                </div>
+                <div style="float: left;" class="contentPartTitle">写真</div>
+                <input type="file" name="blogImage">
+
+                <div class="contentPart">
+                    <div style="float: left;" class="contentPartTitle">正文</div>
+                    <textarea name="productDescription" placeholder="正文を入力してください"></textarea>
+                </div>
+                <button class="contentPart" id="btn1">
+                    登録
+                </button>
+                <br>
+                <button class="contentPart" id="btn2" type="button">
+                    <a href="/html/blog_list.html" style="text-decoration: none;"><span id="deleteBtn">キャンセル</span></a>
+                </button>
+            </form>
+        </div>
+    </main>
     <footer>
-		<div>
-			<small>&copy; 2024 QIANLUYING</small>
-		</div>
-	</footer>
+        <div>
+            <small>&copy; 2024 QIANLUYING</small>
+        </div>
+    </footer>
 </body>
+
 </html>

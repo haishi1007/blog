@@ -1,0 +1,148 @@
+@font-face {
+    font-family: 'Bold';
+    src: url(/fonts/FiraSans-Bold.ttf);
+}
+
+@font-face {
+    font-family: 'YeZi';
+    src: url(/fonts/YeZiGongChangZuiHanJiangXingCao-2.ttf);
+}
+
+h1{
+    font-family: 'Bold';
+    margin-left: 30px;
+}
+
+p{
+    font-family: 'YeZi';
+    margin-left: 30px;
+}
+
+ul{
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: black;
+}
+
+li{
+    float: left;
+    list-style: none;
+    padding-right: 190px;
+    padding-left: 40px;
+}
+
+.list_link{
+    color: white;
+    font-family: 'Bold';
+    text-decoration: none;
+}
+
+h2{
+    font-family: 'Bold';
+    margin-top: 40px;
+    text-align: center; 
+}
+
+#content{
+   display: flex;
+   justify-content: center;
+   margin-left: 50px;
+}
+
+.contentPart{
+    margin-top: 30px;
+}
+
+.contentPart textarea{
+    height: 150px;
+    width: 300px;
+}
+
+.contentPartTitle{
+    margin-right: 40px;
+    font-family: 'Bold';
+}
+
+#contentPartTitleDate{
+    margin-right: 70px;
+}
+
+#btn1{
+    margin-left: 90px;
+    position:relative;
+    min-width: 160px;
+    background: transparent;
+    border: none;
+    border-radius: 50px;
+    font-size: 1rem;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    padding: 10px 20px;
+}
+
+#upBtn{
+    color: #FFFFFF;
+    mix-blend-mode: difference;
+}
+
+#btn1::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 52px;
+    height: 100%;
+    border-radius: 50px;
+    background: black;
+    transition: all 0.85s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+#btn1:hover::before{
+    background: black;
+    width:100% ;
+}
+
+#btn2{
+    margin-left: 90px;
+    position:relative;
+    min-width: 160px;
+    background: transparent;
+    border: none;
+    border-radius: 50px;
+    font-size: 1rem;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    padding: 10px 20px;
+}
+
+#returnBtn{
+    color: white;
+    mix-blend-mode: difference;
+}
+
+#btn2::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 52px;
+    height: 100%;
+    border-radius: 50px;
+    background: rgb(237, 234, 234);
+    transition: all 0.85s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+#btn2:hover::before{
+    background: rgb(237, 234, 234);
+    width:100% ;
+}
+
+footer{
+    text-align: center;
+    margin-top: 20px;
+}

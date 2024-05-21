@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" th:href="@{/css/registerStyle.css}">
+</head>
+<body>
+    <header>
+        <h2>Register</h2>
+        <p>please fill in this from to create an account.</p>
+        <hr>
+    </header>
+    <main>
+        <form th:action="@{/user/register/process}" method="post">
+            <div class="content" id="content-userName">
+                <label for="userName">User name</label>
+                <br>
+                <input type="text" id="userName" name="userName" required>
+            </div>
+            <div class="content" id="content-psw">
+                <label for="password">Password</label>
+                <br>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <div class="content" id="content-email">
+                <label for="userEmail">Email</label>
+                <br>
+                <input type="text" id="email" name="userEmail" required>
+            </div>
+            <hr id="cutLine">
+            <div class="content" id="content-button">
+                <button>Register</button>
+            </div>
+            <div><a href="/login.html">Have an account, login now.</a></div>
+        </form>
+    </main>
+</body>
+</html>

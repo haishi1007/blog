@@ -25,6 +25,7 @@ public class UserLoginController {
 		return "login.html";
 	}
 	
+	
 	//post the message
 	@PostMapping("/user/login/process")
 	public String userLoginProcess(@RequestParam String userName,

@@ -51,7 +51,7 @@ public class BlogRegisterController {
 			
 			//save the file
 			try {
-				Files.copy(blogImage.getInputStream(), Path.of("src/main/resources/static/blog-img"+fileName));
+				Files.copy(blogImage.getInputStream(), Path.of("src/main/resources/static/blog-img/"+fileName));
 			} catch (IOException e) {
 				e.printStackTrace();
 			}

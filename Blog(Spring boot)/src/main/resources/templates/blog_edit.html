@@ -2,77 +2,79 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="/css/blog_edit.css">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<link rel="stylesheet" th:href="@{/css/blog_edit.css}">
 </head>
 
 <body>
-    <header>
-        <h1>Qのblog</h1>
-        <p>爱迪生发明灯泡却没想到越来越无聊</p>
-        <ul class="list">
-            <li class="list__item" id="li_1"><a href="/html/blog_list.html" class="list_link">home</a></li>
-            <li class="list__item" id="li_2"><a href="/html/blog_register.html" class="list_link">write the blog</a>
-            </li>
-            <li class="list__item" id="li_3"><a href="/html/blog_edit.html" class="list_link">edit the blog</a></li>
-            <li class="list__item" id="li_4"><a href="/html/login.html" class="list_link">log out</a></li>
-        </ul>
-    </header>
-    <main>
-        <h2>記事の書き直し</h2>
-        <div id="all">
-            <div id="content">
-                <form action="" method="post">
-                    <div class="contentPart">
-                        <div style="float: left;" class="contentPartTitle">タイトル</div>
-                        <input type="text" name="title">
-                    </div>
-                    <div class="contentPart">
-                        <div style="float: left;" class="contentPartTitle" id="contentPartTitleDate">日付</div>
-                        <input type="date" name="date">
-                    </div>
-                    <div class="contentPart">
-                        <div style="float: left;" class="contentPartTitle">カテゴリ</div>
-                        <select name="productCategory">
-                            <option value=""></option>
-                            <option value="日常">日常</option>
-                            <option value="インスピレーション">インスピレーション</option>
-                            <option value="文章">文章</option>
-                        </select>
-                    </div>
-                    <div class="contentPart">
-                        <div style="float: left;" class="contentPartTitle">写真</div>
-                        <input type="file" name="blogImage">
-                    </div>
-                    <div class="contentPart">
-                        <div style="float: left;" class="contentPartTitle">正文</div>
-                        <textarea name="productDescription" placeholder="正文を入力してください"></textarea>
-                    </div>
-                    <div>
-                        <input type="hidden" name="blogId" value="">
-                        <button class="contentPart" id="btn1">
-                            <span id="updateBtn">更新</span>
-                        </button>
-                        <br>
-                        <button class="contentPart" id="btn2" onclick="history.back();" type="button">
-                            <span id="returnBtn">キャンセル</span>
-                        </button>
-                    </div>
-                </form>
-                <form action="" method="post" id="deletePart">
-                    <input type="hidden" name="blogId" value="">
-                    <button class="contentPart" id="btn3"><span id="deleteBtn">削除</span></button>
-                </form>
-            </div>
-        </div>
-    </main>
-    <footer>
-        <div>
-            <small>&copy; 2024 QIANLUYING</small>
-        </div>
-    </footer>
+	<header>
+		<h1>Qのblog</h1>
+		<p>爱迪生发明灯泡却没想到越来越无聊</p>
+		<nav>
+			<ul class="list">
+				<li class="list__item" id="li_1"><a th:href="@{/blog/list}" class="list_link">home</a></li>
+				<li class="list__item" id="li_2"><a th:href="@{/blog/register}" class="list_link">write the blog</a>
+				</li>
+				<li class="list__item" id="li_3"><a th:href="@{/blog/register}" class="list_link">edit the blog</a></li>
+				<li class="list__item" id="li_4"><a th:href="@{/user/logout}" class="list_link">log out</a></li>
+			</ul>
+		</nav>
+	</header>
+	<main>
+		<h2>記事の書き直し</h2>
+		<div id="all">
+			<div id="content">
+				<form th:action="@{/blog/edit/process}" method="post" enctype="multipart/form-data">
+					<div class="contentPart">
+						<div style="float: left;" class="contentPartTitle">タイトル</div>
+						<input type="text" name="blogTitle" th:value="${blog.blogTitle}">
+					</div>
+					<div class="contentPart">
+						<div style="float: left;" class="contentPartTitle" id="contentPartTitleDate">日付</div>
+						<input type="date" name="date">
+					</div>
+					<div class="contentPart">
+						<div style="float: left;" class="contentPartTitle">カテゴリ</div>
+						<select name="categoryName">
+							<option value=""></option>
+							<option value="日常" th:selected="${blog.categoryName}=='日常'">日常</option>
+							<option value="インスピレーション" th:selected="${blog.categoryName}=='インスピレーション'">インスピレーション</option>
+							<option value="文章" th:selected="${blog.categoryName}=='文章'">文章</option>
+						</select>
+					</div>
+					<div class="contentPart">
+						<div style="float: left;" class="contentPartTitle">写真</div>
+						<input type="file" name="blogImage">
+					</div>
+					<div class="contentPart">
+						<div style="float: left;" class="contentPartTitle">正文</div>
+						<textarea name="article" placeholder="正文を入力してください" th:text=${blog.article}></textarea>
+					</div>
+					<div>
+						<input type="hidden" name="blogId" th:value="${blog.blogId}">
+						<button class="contentPart" id="btn1">
+							<span id="updateBtn">更新</span>
+						</button>
+						<br>
+						<button class="contentPart" id="btn2" onclick="history.back();" type="button">
+							<span id="returnBtn">キャンセル</span>
+						</button>
+					</div>
+				</form>
+				<form action="" method="post" id="deletePart">
+					<input type="hidden" name="blogId" th:value="${blog.blogId}">
+					<button class="contentPart" id="btn3"><span id="deleteBtn">削除</span></button>
+				</form>
+			</div>
+		</div>
+	</main>
+	<footer>
+		<div>
+			<small>&copy; 2024 QIANLUYING</small>
+		</div>
+	</footer>
 </body>
 
 </html>

@@ -16,6 +16,7 @@ public interface BlogDao extends JpaRepository<Blog, Long> {
 	//show the blog list
 	List<Blog>findAll();
 	
+	//blog register
 	//select* FROM Blog WHERE blogTitle=?
 	Blog findByBlogTitle(String blogTitle);
 	

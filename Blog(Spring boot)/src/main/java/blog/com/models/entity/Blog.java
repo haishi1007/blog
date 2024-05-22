@@ -13,6 +13,12 @@ public class Blog {
 	
 	private String blogTitle;
 	private String categoryName;
+	/**
+	 * @DateTimeFormat(pattern = "yyyy-MM-dd") Spring
+	 * Frameworkアノテーションで、このフィールドが日付/時間の形式を持つことを示します。
+	 */
+	/*@DateTimeFormat(pattern = "yyyy-MM-dd")*/
+	/*private LocalDate date;*/
 	private String blogImage;
 	private String article;
 	private Long userId;

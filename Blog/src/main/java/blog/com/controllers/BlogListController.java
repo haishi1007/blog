@@ -22,14 +22,19 @@ public class BlogListController {
 	
 	
 	
-	//show the blog list page
+	//blogList画面の表示
 	@GetMapping("/blog/list")
 	public String getBlogList(Model model) {
+		//sessionからログインする人の情報を取得する
 		Account account = (Account) session.getAttribute("loginUserInfo");
+		
+		//もし、account==null -->redirect:/user/login
+		//そうでない
+		//　--> blog_list.html
 		if(account == null) {
 			return "redirect:/user/login";
 		}else {
-			//get the message of blog list
+			//商品情報を取得する
 			List<Blog> blogList=blogService.selectAllBlogList(account.getUserId());
 			model.addAttribute("blogList",blogList);
 			return "blog_list.html";

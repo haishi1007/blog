@@ -11,7 +11,11 @@ public class AccountService {
 	@Autowired
 	private AccountDao accountDao;
 	
-	//register
+	//登録のために
+	//もし、userName==null
+	//accountDaoに登録者のデータを保存する　true
+	//そうでない
+	//false
 	public boolean createAccount(String userName,
 			String userEmail,
 			String password) {
@@ -23,7 +27,10 @@ public class AccountService {
 		}
 	}
 	
-	//login
+	//ログイン
+	//もし、userNameとpasswordが存在しないーー＞null
+	//そうでない
+	//ログイン情報をコントローラークラスに渡す
 	public Account loginCheck(String userName, String password) {
 		Account account = accountDao.findByUserNameAndPassword(userName, password);
 		if(account==null) {

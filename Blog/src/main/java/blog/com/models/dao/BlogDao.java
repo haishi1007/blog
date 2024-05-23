@@ -10,10 +10,10 @@ import jakarta.transaction.Transactional;
 @Repository
 @Transactional
 public interface BlogDao extends JpaRepository<Blog, Long> {
-	//insert and update
+	//保存処理と更新処理　insert and update
 	Blog save(Blog blog);
 	
-	//show the blog list
+	//blog　listを表示する
 	List<Blog>findAll();
 	
 	//blog register
@@ -21,9 +21,9 @@ public interface BlogDao extends JpaRepository<Blog, Long> {
 	Blog findByBlogTitle(String blogTitle);
 	
 	//select* FROM Blog WHERE blogId=?
-	//edit
+	//編集の時、同じのblogIdがあるか
 	Blog findByBlogId(Long blogId);
 	
-	//delete
+	//削除する時に使用する
 	void deleteByBlogId(Long blogId);
 }

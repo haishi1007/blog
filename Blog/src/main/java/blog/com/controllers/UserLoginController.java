@@ -15,22 +15,26 @@ public class UserLoginController {
 	@Autowired
 	private AccountService accountService;
 	
-	//use the session
+	//sessionを使う
 	@Autowired
 	private HttpSession session;
 	
-	//login page
+	//ログイン画面の表示
 	@GetMapping("/user/login")
 	public String getUserLoginPage() {
 		return "login.html";
 	}
 	
 	
-	//post the message
+	//ログイン処理
 	@PostMapping("/user/login/process")
 	public String userLoginProcess(@RequestParam String userName,
 			@RequestParam String password) {
+		//loginCheckメソッドを呼び出した結果をaccountに格納する
 		Account account = accountService.loginCheck(userName, password);
+		//もし、account==null、login.htmlへ行く
+		//そうでない
+		//　"/blog/list"へ行く
 		if(account == null) {
 			return "login.html";
 		}else {

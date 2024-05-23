@@ -13,17 +13,20 @@ public class UserRegisterController {
 	@Autowired
 	private AccountService accountService;
 	
-	//show the register page
+	//登録画面の表示
 	@GetMapping("/user/register")
 	public String getUserRegisterPage() {
 		return "register.html";
 	}
 	
-	//register
+	//登録処理
 	@PostMapping("/user/register/process")
 	public String userRegisterProcess(@RequestParam String userName,
 			@RequestParam String password,
 			@RequestParam String userEmail) {
+		//もし、createAccount-->true login.htmlへ行く
+		//そうでない
+		//register.htmlへ行く
 		if(accountService.createAccount(userName, userEmail, password)) {
 			return "login.html";
 		}else {

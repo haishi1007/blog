@@ -23,10 +23,12 @@ public class Blog {
 	private String article;
 	private Long userId;
 	
-	//constructor
+	//空のコンストラクタ
 	public Blog() {
 	}
-
+	
+	
+	//コンストラクタ
 	public Blog(String blogTitle, String categoryName, String blogImage, String article, Long userId) {
 		this.blogTitle = blogTitle;
 		this.categoryName = categoryName;

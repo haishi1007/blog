@@ -16,7 +16,6 @@
 			<ul class="list">
 				<li class="list__item" id="li_1"><a th:href="@{/blog/list}" class="list_link">home</a></li>
 				<li class="list__item" id="li_2"><a th:href="@{/blog/register}" class="list_link">write the blog</a></li>
-				<li class="list__item" id="li_3"><a th:href="@{/blog/register}" class="list_link">edit the blog</a></li>
 				<li class="list__item" id="li_4"><a th:href="@{/user/logout}" class="list_link">log out</a></li>
 			</ul>
 		</nav>
@@ -26,8 +25,8 @@
 		<hr>
 		<ul class="blogs">
 			<li th:each="blog:${blogList}">
-				<a th:href="@{/blog/edit/{blogId}(blogId=${blog.blogId})}">
-					<img th:src="@{/blog-img/{imagePath}(imagePath=${blog.blogImage})}" alt="">
+				<a th:href="@{/blog/edit/{blogId}(blogId=${blog.blogId})}" style="color: black;">
+					<img th:src="@{/blog-img/{imagePath}(imagePath=${blog.blogImage})}" alt="" style="width: 200px; height: 150px;">
 					<p th:text="${blog.blogTitle}"></p><br>
 					<p th:text="${blog.categoryName}"></p>
 				</a>

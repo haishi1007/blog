@@ -22,13 +22,13 @@ ul{
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: black;
-}
+    background-color:black
+    }
 
 li{
     float: left;
     list-style: none;
-    padding-right: 190px;
+    padding-right: 290px;
     padding-left: 40px;
 }
 
@@ -37,12 +37,17 @@ li{
     font-family: 'Bold';
     text-decoration: none;
 }
-
+.blogs{
+	width:300px; 
+	margin: 0 auto;
+	background-color:white;
+}
 h2{
     margin-top: 100px;
     text-align: center;
     font-family: 'Bold';
 }
+
 
 #article{
     display: block;
@@ -53,3 +58,4 @@ h2{
 footer{
     text-align: center;
 }
+

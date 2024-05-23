@@ -15,11 +15,11 @@ public class Account {
 	private String userEmail;
 	private String password;
 	
-	//empty constructor
+	//空のコンストラクタ
 	public Account() {
 	}
 
-	//not empty constructor
+	//コンストラクタ
 	public Account(String userName, String userEmail, String password) {
 		this.userName = userName;
 		this.userEmail = userEmail;

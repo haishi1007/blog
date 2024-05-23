@@ -11,9 +11,10 @@ public class UserLogoutController {
 	@Autowired
 	private HttpSession session;
 	
-	//logout
+	//logout画面の表示
 	@GetMapping("/user/logout")
 	public String userLogout() {
+		//session無効化
 		session.invalidate();
 		return "redirect:/user/login";
 	}

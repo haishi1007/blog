@@ -8,13 +8,13 @@ import blog.com.models.entity.Account;
 @Repository
 public interface AccountDao extends JpaRepository<Account, Long> {
 
-	//insert and update
+	//保存処理と更新処理insert and update
 	Account save(Account account);
 	
-	//register
+	//登録の時、同じメールができない
 	Account findByUserEmail(String userEmail);
 	
-	//for login
+	//ログインの時、userNameとpasswordの一致性のために
 	Account findByUserNameAndPassword(String userName, String password);
 	
 	

@@ -15,9 +15,7 @@
 		<nav>
 			<ul class="list">
 				<li class="list__item" id="li_1"><a th:href="@{/blog/list}" class="list_link">home</a></li>
-				<li class="list__item" id="li_2"><a th:href="@{/blog/register}" class="list_link">write the blog</a>
-				</li>
-				<li class="list__item" id="li_3"><a th:href="@{/blog/register}" class="list_link">edit the blog</a></li>
+				<li class="list__item" id="li_2"><a th:href="@{/blog/register}" class="list_link">write the blog</a></li>
 				<li class="list__item" id="li_4"><a th:href="@{/user/logout}" class="list_link">log out</a></li>
 			</ul>
 		</nav>
@@ -30,10 +28,6 @@
 					<div class="contentPart">
 						<div style="float: left;" class="contentPartTitle">タイトル</div>
 						<input type="text" name="blogTitle" th:value="${blog.blogTitle}">
-					</div>
-					<div class="contentPart">
-						<div style="float: left;" class="contentPartTitle" id="contentPartTitleDate">日付</div>
-						<input type="date" name="date">
 					</div>
 					<div class="contentPart">
 						<div style="float: left;" class="contentPartTitle">カテゴリ</div>
@@ -63,7 +57,7 @@
 						</button>
 					</div>
 				</form>
-				<form action="" method="post" id="deletePart">
+				<form th:action="@{/blog/delete/process}" method="post" id="deletePart">
 					<input type="hidden" name="blogId" th:value="${blog.blogId}">
 					<button class="contentPart" id="btn3"><span id="deleteBtn">削除</span></button>
 				</form>

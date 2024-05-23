@@ -26,8 +26,12 @@ public class BlogRegisterController {
 	@Autowired
 	private HttpSession session;
 	
+	//blog登録画面の表示
 	@GetMapping("/blog/register")
 	public String getBlogRegisterPage(Model model) {
+		//sessionからログインする人の情報を取得する
+		//もし、account==null -->/user/login
+		//そうでない　-->blog_register.html
 		Account account = (Account) session.getAttribute("loginUserInfo");
 		if(account == null) {
 			return "redirect:/user/login";
@@ -36,26 +40,28 @@ public class BlogRegisterController {
 		}
 	}
 	
-	//blog register
+	//blogの登録処理
 	@PostMapping("/blog/register/process")
 	public String blogRegisterProcess(@RequestParam String blogTitle,
 			@RequestParam String categoryName,
 			@RequestParam MultipartFile blogImage,
 			@RequestParam String article) {
+		//sessionからログインする人の情報を取得する
 		Account account = (Account) session.getAttribute("loginUserInfo");
 		if(account==null) {
 			return "redirect:/user/login";
 		}else {
-			//file's name
+			//fileの名前
 			String fileName = new SimpleDateFormat("yyyy-MM-dd-HH-mm-ss").format(new Date())+blogImage.getOriginalFilename();
 			
-			//save the file
+			//fileの保存処理
 			try {
 				Files.copy(blogImage.getInputStream(), Path.of("src/main/resources/static/blog-img/"+fileName));
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
-			
+			//もし、同じblogTitleがなければ、保存する　-->/blog/list
+			//そうでない -->blog_register.html
 			if(blogService.createBlog(blogTitle, categoryName, fileName, article, account.getUserId())) {
 				return "redirect:/blog/list";
 			}else {

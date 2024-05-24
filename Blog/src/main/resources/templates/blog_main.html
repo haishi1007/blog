@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<link rel="stylesheet" th:href="@{/css/blog_main.css}">
+</head>
+
+<body>
+	<header>
+		<h1>Qのblog</h1>
+		<p>爱迪生发明灯泡却没想到越来越无聊</p>
+		<nav>
+			<ul class="list">
+				<li class="list__item" id="li_1"><a th:href="@{/blog/list}" class="list_link">home</a></li>
+				<li class="list__item" id="li_2"><a th:href="@{/blog/register}" class="list_link">write the blog</a>
+				</li>
+				<li class="list__item" id="li_4"><a th:href="@{/user/logout}" class="list_link">log out</a></li>
+			</ul>
+		</nav>
+	</header>
+	<main>
+		<h2>Blog List</h2>
+		<hr>
+		<div class="content">
+			<p th:text="${blog.blogTitle}"></p><br>
+			<p th:text="${blog.categoryName}"></p>
+			<img th:src="@{/blog-img/{imagePath}(imagePath=${blog.blogImage})}" alt=""
+				style="width: 200px; height: 150px;">
+			<p th:text="${blog.article}"></p>
+			<button th:attr="onClick='location.href=\''+'/blog/edit/'+${blog.blogId}+'\''" id="btn1">
+				<span id="update">更新</span>
+			</button>
+			<button onclick="history.back();" type="button" id="btn2">
+				<span id="return">キャンセル</span>
+			</button>
+		</div>
+	</main>
+	<footer>
+		<div>
+			<small>&copy; 2024 QIANLUYING</small>
+		</div>
+	</footer>
+</body>
+
+</html>
